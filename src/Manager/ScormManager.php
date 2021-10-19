@@ -65,6 +65,7 @@ class ScormManager
             $scorm->origin_file = $scormData['name'];
             $scorm->origin_file_mime = $scormData['type'];
             $scorm->uuid = $scormData['hashName'];
+            $scorm->save();
 
             if (!empty($scormData['scos']) && is_array($scormData['scos'])) {
                 foreach ($scormData['scos'] as $scoData) {
