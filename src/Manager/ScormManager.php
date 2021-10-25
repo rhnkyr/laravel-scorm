@@ -299,7 +299,7 @@ class ScormManager
         return ScormModel::with([
             'scos'
         ])->where('hash_name', $scormUuid)
-            ->get();
+            ->firstOrFail();
     }
 
     /**
