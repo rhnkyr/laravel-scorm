@@ -291,6 +291,18 @@ class ScormManager
     }
 
     /**
+     * Get scorm package by uuid
+     * @param $scormUuid
+     * @return mixed
+     */
+    public function getScorm($scormUuid){
+        return ScormModel::with([
+            'scos'
+        ])->where('hash_name', $scormUuid)
+            ->get();
+    }
+
+    /**
      * Get SCO list
      * @param $scormId
      * @return \Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection
